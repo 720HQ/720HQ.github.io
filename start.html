@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#121817">
+	<meta name="description" content="A portfolio of thoughtful work, career milestones, and ways to collaborate.">
+	<title>Ahanaf Afif Khan | Thoughtful work, made real</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<style>
+		:root {
+			--paper: #121817;
+			--ink: #eff2ec;
+			--muted: #a7b2ac;
+			--line: #34413c;
+			--lime: #d3e87d;
+			--blue: #91b2ff;
+			--serif: Georgia, "Times New Roman", serif;
+			--sans: "DM Sans", sans-serif;
+			--display: "Manrope", sans-serif;
+		}
+
+		* { box-sizing: border-box; }
+		html { scroll-behavior: smooth; }
+		body {
+			margin: 0;
+			background: linear-gradient(155deg, #121817 0%, #19211e 48%, #121817 100%);
+			color: var(--ink);
+			font-family: var(--sans);
+			-webkit-font-smoothing: antialiased;
+		}
+		a { color: inherit; }
+		.wrap { width: min(1120px, calc(100% - 64px)); margin-inline: auto; }
+		.topbar {
+			height: 82px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			border-bottom: 1px solid var(--line);
+		}
+		.wordmark {
+			display: inline-flex;
+			align-items: center;
+			gap: 10px;
+			font: 800 15px var(--display);
+			text-decoration: none;
+			letter-spacing: 0;
+		}
+		.mark { width: 13px; height: 13px; background: var(--blue); border-radius: 50%; }
+		.nav { display: flex; align-items: center; gap: 34px; }
+		.nav a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color .2s ease; }
+		.nav a:hover { color: var(--blue); }
+		.nav .nav-contact { color: var(--ink); font-weight: 700; }
+		.hero {
+			min-height: 610px;
+			display: grid;
+			grid-template-columns: 1.05fr .95fr;
+			gap: 52px;
+			align-items: center;
+			padding-block: 74px 82px;
+		}
+		.eyebrow {
+			display: inline-flex;
+			align-items: center;
+			gap: 10px;
+			margin: 0 0 23px;
+			color: var(--muted);
+			font-size: 11px;
+			font-weight: 700;
+			letter-spacing: 1.2px;
+			text-transform: uppercase;
+		}
+		.eyebrow::before { content: ""; width: 26px; height: 2px; background: var(--blue); }
+		h1, h2, h3, p { margin-top: 0; }
+		h1 {
+			max-width: 610px;
+			margin-bottom: 23px;
+			font: 500 clamp(54px, 6.7vw, 88px)/.99 var(--display);
+			letter-spacing: -3.4px;
+		}
+		h1 em { font-family: var(--serif); font-weight: 400; }
+		.hero-copy {
+			max-width: 450px;
+			margin-bottom: 30px;
+			color: var(--muted);
+			font-size: 16px;
+			line-height: 1.75;
+		}
+		.actions { display: flex; align-items: center; gap: 22px; }
+		.button {
+			min-height: 49px;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			gap: 11px;
+			padding: 0 19px;
+			border: 1px solid var(--blue);
+			border-radius: 3px;
+			background: var(--blue);
+			color: #111817;
+			font-size: 13px;
+			font-weight: 700;
+			text-decoration: none;
+			transition: transform .2s ease, background .2s ease;
+		}
+		.button:hover { background: var(--lime); border-color: var(--lime); transform: translateY(-2px); }
+		.text-link { font-size: 13px; font-weight: 700; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+		.portrait-wrap { position: relative; max-width: 450px; justify-self: end; width: 100%; }
+		.portrait {
+			display: block;
+			width: 100%;
+			aspect-ratio: 4 / 4.65;
+			object-fit: cover;
+			object-position: center 38%;
+			filter: saturate(.78);
+		}
+		.portrait-note {
+			position: absolute;
+			left: -24px;
+			bottom: 28px;
+			width: 150px;
+			aspect-ratio: 1;
+			display: grid;
+			place-content: center;
+			padding: 18px;
+			border-radius: 50%;
+			background: var(--lime);
+			color: #18201b;
+			text-align: center;
+			transform: rotate(-8deg);
+		}
+		.portrait-note strong { font: 800 16px/1.1 var(--display); }
+		.portrait-note span { margin-top: 7px; font-size: 10px; line-height: 1.3; }
+		.section { padding-block: 92px; border-top: 1px solid var(--line); }
+		.section-head { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 42px; }
+		.section-head .eyebrow { margin-bottom: 15px; }
+		h2 { margin-bottom: 0; font: 600 clamp(36px, 4vw, 54px)/1.05 var(--display); letter-spacing: -1.7px; }
+		.section-intro { max-width: 340px; margin: 0 0 4px; color: var(--muted); font-size: 14px; line-height: 1.65; }
+		.proof-band { display: grid; grid-template-columns: repeat(3, 1fr); background: #202c28; }
+		.proof-item { min-height: 165px; padding: 30px 32px; border-right: 1px solid rgba(239,242,236,.14); }
+		.proof-item:last-child { border-right: 0; }
+		.proof-num { display: block; margin-bottom: 15px; font: 700 11px var(--display); }
+		.proof-item h3 { margin-bottom: 8px; font: 700 18px var(--display); }
+		.proof-item p { max-width: 260px; margin-bottom: 0; color: var(--muted); font-size: 13px; line-height: 1.55; }
+		.career-list { border-top: 1px solid var(--line); }
+		.career-row {
+			display: grid;
+			grid-template-columns: 150px 1fr 1.15fr;
+			gap: 25px;
+			padding: 27px 0;
+			border-bottom: 1px solid var(--line);
+			align-items: start;
+		}
+		.career-date { padding-top: 4px; color: var(--muted); font-size: 12px; }
+		.career-title { margin-bottom: 7px; font: 700 17px var(--display); }
+		.career-org { color: var(--blue); font-size: 13px; font-weight: 600; }
+		.career-desc { max-width: 420px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
+		.work-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 18px; }
+		.work-card { min-height: 295px; display: flex; flex-direction: column; justify-content: space-between; padding: 26px; text-decoration: none; }
+		.work-card:first-child { background: #233344; }
+		.work-card:last-child { background: #2a302d; }
+		.work-top { display: flex; justify-content: space-between; color: #bdc9df; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; }
+		.work-arrow { font-size: 20px; }
+		.work-card h3 { max-width: 390px; margin-bottom: 9px; font: 600 27px/1.15 var(--display); letter-spacing: -.5px; }
+		.work-card p { margin: 0; color: #c1cbc5; font-size: 13px; line-height: 1.5; }
+		.contact {
+			display: grid;
+			grid-template-columns: 1fr auto;
+			align-items: center;
+			gap: 30px;
+			padding: 55px 0;
+			border-top: 1px solid var(--line);
+		}
+		.contact .eyebrow { margin-bottom: 15px; }
+		.contact h2 { max-width: 620px; font-size: clamp(36px, 4vw, 52px); }
+		.contact .button { min-width: 160px; }
+		footer { display: flex; justify-content: space-between; gap: 20px; padding: 21px 0 28px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; }
+		footer a { text-decoration: none; }
+		[data-reveal] { animation: rise-in .7s both; }
+		[data-reveal="2"] { animation-delay: .12s; }
+		[data-reveal="3"] { animation-delay: .22s; }
+		@keyframes rise-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+		@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+		@media (max-width: 760px) {
+			.wrap { width: min(100% - 38px, 560px); }
+			.topbar { height: 68px; }
+			.nav { gap: 17px; }
+			.nav a { font-size: 11px; }
+			.nav a:nth-child(2) { display: none; }
+			.hero { min-height: auto; grid-template-columns: 1fr; gap: 43px; padding-block: 60px 62px; }
+			h1 { max-width: 540px; font-size: clamp(55px, 12vw, 78px); letter-spacing: -2.5px; }
+			.portrait-wrap { width: min(82%, 390px); justify-self: center; }
+			.portrait-note { left: -33px; width: 126px; }
+			.section { padding-block: 66px; }
+			.section-head { display: block; margin-bottom: 29px; }
+			.section-intro { margin-top: 16px; }
+			.proof-band { grid-template-columns: 1fr; }
+			.proof-item { min-height: 0; padding: 23px; border-right: 0; border-bottom: 1px solid rgba(239,242,236,.14); }
+			.proof-item:last-child { border-bottom: 0; }
+			.proof-num { margin-bottom: 10px; }
+			.career-row { grid-template-columns: 94px 1fr; gap: 8px 14px; }
+			.career-desc { grid-column: 2; }
+			.work-grid { grid-template-columns: 1fr; }
+			.work-card { min-height: 245px; }
+			.contact { grid-template-columns: 1fr; padding-block: 45px; }
+			footer { flex-wrap: wrap; }
+		}
+		@media (max-width: 390px) {
+			.wrap { width: calc(100% - 30px); }
+			.nav { gap: 12px; }
+			.nav a { font-size: 10px; }
+			.actions { gap: 15px; }
+			.button { padding-inline: 14px; }
+		}
+	</style>
+</head>
+<body>
+	<header class="wrap topbar">
+		<a class="wordmark" href="#home" aria-label="Ahanaf Afif Khan, home"><span class="mark"></span>Ahanaf Afif Khan</a>
+		<nav class="nav" aria-label="Main navigation">
+			<a href="#about">About</a>
+			<a href="#career">Career</a>
+			<a href="#work">Selected work</a>
+			<a class="nav-contact" href="#contact">Let's talk <span aria-hidden="true">↗</span></a>
+		</nav>
+	</header>
+
+	<main>
+		<section class="wrap hero" id="home">
+			<div>
+				<p class="eyebrow" data-reveal>Independent professional · Your location</p>
+				<h1 data-reveal="2">Good work starts with <em>good questions.</em></h1>
+				<p class="hero-copy" data-reveal="3">I'm Ahanaf Afif Khan, a [your role or specialty] who turns complex challenges into clear, considered work. I bring thoughtful collaboration, strong craft, and the follow-through to get ideas over the line.</p>
+				<div class="actions" data-reveal="3">
+					<a class="button" href="#contact">Work with me <span aria-hidden="true">↗</span></a>
+					<a class="text-link" href="#career">Explore my career</a>
+				</div>
+			</div>
+			<div class="portrait-wrap" data-reveal="2">
+				<!-- Replace this sample portrait with your own photo. -->
+				<img class="portrait" src="https://images.unsplash.com/photo-1648474484044-bb82df2f5a1f?auto=format&fit=crop&w=1100&q=85" alt="Young man in a navy suit, white shirt, and tie">
+				<div class="portrait-note"><strong>Curious<br>by nature.</strong><span>Practical by design.</span></div>
+			</div>
+		</section>
+
+		<section class="section" id="about">
+			<div class="wrap">
+				<div class="section-head">
+					<div><p class="eyebrow">Why work with me</p><h2>Thoughtful in the room.<br>Dependable in the work.</h2></div>
+					<p class="section-intro">The best outcomes come from pairing clear thinking with a generous, hands-on way of working. Here's what you can expect from me.</p>
+				</div>
+				<div class="proof-band">
+					<article class="proof-item"><span class="proof-num">01 / CLARITY</span><h3>I make the complex clear.</h3><p>I ask the right questions, find the signal, and help a team agree on what matters next.</p></article>
+					<article class="proof-item"><span class="proof-num">02 / CRAFT</span><h3>I care about the details.</h3><p>From the first rough idea to the final handoff, I bring care and intention to the whole process.</p></article>
+					<article class="proof-item"><span class="proof-num">03 / FOLLOW-THROUGH</span><h3>I get things over the line.</h3><p>I take ownership, communicate early, and stay focused on work people can actually use.</p></article>
+				</div>
+			</div>
+		</section>
+
+		<section class="section" id="career">
+			<div class="wrap">
+				<div class="section-head">
+					<div><p class="eyebrow">The path so far</p><h2>A career in progress.</h2></div>
+					<p class="section-intro">A few milestones that have shaped how I think, collaborate, and make an impact. Replace these prompts with your real experience.</p>
+				</div>
+				<div class="career-list">
+					<article class="career-row"><span class="career-date">20XX — NOW</span><div><h3 class="career-title">Your current role</h3><span class="career-org">Company or organization</span></div><p class="career-desc">Describe the work you lead, who you work with, and one concrete outcome you're proud of.</p></article>
+					<article class="career-row"><span class="career-date">20XX — 20XX</span><div><h3 class="career-title">Your previous role</h3><span class="career-org">Company or organization</span></div><p class="career-desc">Share a project, responsibility, or turning point that helped you grow in your field.</p></article>
+					<article class="career-row"><span class="career-date">20XX — 20XX</span><div><h3 class="career-title">Education or early experience</h3><span class="career-org">School, program, or first opportunity</span></div><p class="career-desc">Add the foundation, skill, or formative experience that still informs your work today.</p></article>
+				</div>
+			</div>
+		</section>
+
+		<section class="section" id="work">
+			<div class="wrap">
+				<div class="section-head">
+					<div><p class="eyebrow">A few examples</p><h2>Work worth sharing.</h2></div>
+					<p class="section-intro">Show the challenge, your contribution, and what changed. A little context makes a project memorable.</p>
+				</div>
+				<div class="work-grid">
+					<a class="work-card" href="#contact"><div class="work-top"><span>Case study 01 · Add your field</span><span class="work-arrow" aria-hidden="true">↗</span></div><div><h3>A project that made a meaningful difference.</h3><p>Replace with a one-sentence result or the problem you helped solve.</p></div></a>
+					<a class="work-card" href="#contact"><div class="work-top"><span>Case study 02 · Add your field</span><span class="work-arrow" aria-hidden="true">↗</span></div><div><h3>A second example of your best work.</h3><p>Share what you owned, how you worked, and what came of it.</p></div></a>
+				</div>
+			</div>
+		</section>
+
+		<section class="wrap contact" id="contact">
+			<div><p class="eyebrow">Have something in mind?</p><h2>Let's make something useful happen.</h2></div>
+			<a class="button" href="mailto:hello@example.com">Get in touch <span aria-hidden="true">↗</span></a>
+		</section>
+	</main>
+
+	<footer class="wrap">
+		<span>© <span id="year">2026</span> Ahanaf Afif Khan</span>
+		<span><a href="mailto:hello@example.com">hello@example.com</a> · <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a></span>
+	</footer>
+	<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
